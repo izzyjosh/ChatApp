@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #385f4a;
+}
+
+.nav-bar {
+  background: #1c3025;
+}
+a {
+  text-decoration: none;
+}
