@@ -15,7 +15,7 @@ def index(request:HttpRequest):
 @login_required
 def chatroom(request:HttpRequest,slug):
     chatroom = ChatRoom.objects.get(slug=slug)
-    messages = Message.objects.all()
+    messages = Message.objects.filter(receiver=chatroom)
 
     context = {"chatroom":chatroom,"messages":messages}
     return render(request,"main/chatroom.html",context)

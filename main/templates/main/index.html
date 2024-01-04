@@ -32,14 +32,11 @@
         <div class="row my-2 mx-2">
             {% for chatroom in chatrooms %}
             <div class="col-12 col-sm-4 g-3 g-sm-5">
+              <a href="{% url 'main:chatroom' chatroom.slug %}" style="text-decoration:none; color:orange;">
                 <div class="room bg-white rounded">
-                    <h4 class="text-start p-2">{{ chatroom.name}}</h4>
-                    <a href="{% url 'main:chatroom' chatroom.slug %}">
-                        <div class="d-grid">
-                            <button class="btn btn-warning">Join</button>
-                        </div>
-                    </a>
+                    <h4 class="text-start p-2">{{ chatroom.name}} chat </h4>
                 </div>
+              </a>
             </div>
             {% endfor %}
         </div>
