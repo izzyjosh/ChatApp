@@ -1,0 +1,15 @@
+<br />
+{% extends "account/base.html"%} {% block title %} Signin {% endblock %}
+<br />
+{%block content %}
+{% load socialaccount %}
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" placeholder="pPassword" name="Password" />
+        <button>Signin</button>
+    </form>
+    <a href="{% provider_login_url 'google' %}">Google</a>
+</div>
+{% endblock %}
