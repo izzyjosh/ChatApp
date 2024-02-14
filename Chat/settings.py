@@ -15,6 +15,8 @@ ALLOWED_HOSTS = ["localhost",]
 
 SITE_ID = 1
 
+AUTH_USER_MODEL = "accapp.User"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -26,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "main.apps.MainConfig",
+    "accapp.apps.AccappConfig",
     "django.contrib.sites",
 
     'allauth',
@@ -124,9 +127,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,"static"),)
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #login conf
-
-LOGIN_URL = ""
-LOGOUT_REDIRECT_URL = ""
 LOGIN_REDIRECT_URL = "chat/"
 
 CHANNEL_LAYERS = {

@@ -1,15 +1,18 @@
+{% extends "account/base.html" %}
 <br />
-{% extends "account/base.html"%} {% block title %} Signin {% endblock %}
-<br />
-{%block content %}
 {% load socialaccount %}
+<br />
+{% block title %}Signin {% endblock %}
+<br />
+{% block content %}
 <div class="container">
     <form action="" method="post">
         {% csrf_token %}
         <input type="text" name="username" placeholder="Username" />
-        <input type="password" placeholder="pPassword" name="Password" />
-        <button>Signin</button>
+        <input type="password" placeholder="Password" name="Password" />
+        <button class="btn">Signin</button>
     </form>
-    <a href="{% provider_login_url 'google' %}">Google</a>
+    <a href="{% provider_login_url 'google' %}" class="google">Login with Google</a>
+    <p>don't have an account?<a href="#">Sign up</a></p>
 </div>
-{% endblock %}
+{% endblock%}
